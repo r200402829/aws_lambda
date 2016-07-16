@@ -1,0 +1,7 @@
+import commands
+
+def _(cmd):
+    return commands.getoutput(cmd)
+
+def lambda_handler(event, context):
+    print _('printenv')

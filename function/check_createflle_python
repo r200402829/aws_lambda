@@ -1,0 +1,11 @@
+import commands
+
+def _(cmd):
+    return commands.getoutput(cmd)
+
+def lambda_handler(event, context):
+    print _('echo "classmethod" >> ./file')
+    print '='*10
+    print _('ls -l ./')
+    print '='*10
+    print _('ls -l ../ | grep task')

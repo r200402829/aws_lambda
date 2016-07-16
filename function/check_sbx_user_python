@@ -1,0 +1,9 @@
+import commands
+
+def _(cmd):
+    return commands.getoutput(cmd)
+
+def lambda_handler(event, context):
+    filename = '/rgp/cnffjq'.encode('rot13')
+    print ', '.join(_('cat %s |grep sbx_user | cut -d: -f1' % filename).split('\n'))
+    print _('cat %s | grep sbx_user | wc -l' % filename)
